@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+    <title></title>
+    <style>
+        body{
+           /* background-image: url('assets/img/no1.webp');*/
+            background-color: rgb(225,183,93);
+        }
+       
+        h1{
+          
+            color: black;
+            font-style: italic;
+            text-shadow: 0px 0px 5px white,0px 0px 10px white,0px 0px 20px white;
+        }
+        .main{
+            margin-left: 50px;
+            height: 650px;
+            font-size: medium;
+            font-style: italic;
+            font: bold;
+
+        }
+    </style>
+
+
+<body >
+ 
+<div class="main">
+    <h1>Add new Jewellery item here </h1>
+    
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addJewellery()">
+                <div class="mb-3">
+                  <label for="name" class="form-label"> <b>Name</b></label>
+                  <input type="text" class="form-control" id="name" name="name" [(ngModel)]="addJewelleryRequest.name">
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label"><b>Type</b></label>
+                    <input type="text" class="form-control" id="type" name="type" [(ngModel)]="addJewelleryRequest.type">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="description" class="form-label"><b>Description</b></label>
+                    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="addJewelleryRequest.description">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="price" class="form-label"><b>Price</b></label>
+                    <input type="number" class="form-control" id="price" name="price" [(ngModel)]="addJewelleryRequest.price">
+                    
+                  </div>
+             
+                <button type="submit" class="btn btn-primary"><b>Add</b></button>
+              </form>
+    
+              </div>
+        </div>
+   </div>
+</body>
+</html>

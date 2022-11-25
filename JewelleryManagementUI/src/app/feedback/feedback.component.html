@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+    <title></title>
+    <style>
+        body{
+            /*background-image: url('assets/img/no1.webp');*/
+            background-color: rgb(225,183,93);
+        }
+       
+        h1{
+          
+            color: black;
+            font-style: italic;
+            text-shadow: 0px 0px 5px white,0px 0px 10px white,0px 0px 20px white;
+        }
+        .main{
+            margin-left: 50px;
+            font-size: medium;
+            font-style: italic;
+            font: bold;
+
+        }
+        .details{
+            margin-left: 50px;
+            height: 500px;
+        }
+    </style>
+<body>
+
+<div class="main">
+    <h1>Add your valuable FEEDBACK here...</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addFeedback()">
+                <div class="mb-3">
+                  <label for="username" class="form-label"> <b>Name</b></label>
+                  <input type="text" class="form-control" id="username" name="username" [(ngModel)]="addFeedbackRequest.username">
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label"><b>Email</b></label>
+                    <input type="text" class="form-control" id="email" name="type" [(ngModel)]="addFeedbackRequest.email">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label"><b>Message</b></label>
+                    <input type="text" class="form-control" id="message" name="message" [(ngModel)]="addFeedbackRequest.message">
+                    
+                  </div>
+             
+                <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+              </form>
+    
+    
+        </div>
+    </div>
+    
+    </div>
+
+
+<div class="details">
+    <table class="table">
+        <thead>
+            <tr>
+                <th> User Name</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let f of feedbacks'>
+            <td>{{f.username}}</td>
+            <td>{{f.message}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

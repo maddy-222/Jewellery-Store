@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <title></title>
+    <style>
+        body{
+            /*background-image: url('assets/img/no1.webp');*/
+            background-color: rgb(225,183,93);
+        }
+       
+        h1{
+          
+            color: black;
+            font-style: italic;
+            text-shadow: 0px 0px 5px white,0px 0px 10px white,0px 0px 20px white;
+        }
+        .main{
+            margin-left: 50px;
+            height: 650px;
+            font-size: medium;
+            font-style: italic;
+            font: bold;
+
+        }
+       
+    </style>
+    <body>
+<div class="main">
+    <h1>Jewellery Items</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let j of jewelleries'>
+            <td>{{j.jid}}</td>
+            <td>{{j.name}}</td>
+            <td>{{j.type}}</td>
+            <td>{{j.description}}</td>
+            <td>{{j.price}}</td>
+            <td>
+                <a [routerLink]="['/jewelleries','edititem',j.jid]">Edit</a>
+            </td>
+            <td>
+                
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

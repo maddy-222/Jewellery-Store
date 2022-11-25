@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <title></title>
+    <style>
+        body{
+            background-image: url('assets/img/no1.webp');
+        }
+       
+        h2{
+          
+            color: black;
+            font-style: italic;
+            text-shadow: 0px 0px 5px white,0px 0px 10px white,0px 0px 20px white;
+        }
+        .main{
+            margin-left: 50px;
+            height: 650px;
+            font-size: medium;
+            font-style: italic;
+            font: bold;
+
+        }
+    </style>
+<body>
+<div class="main">
+    <h1>Edit Jewellery item here </h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="updateJewellery()">
+                <div class="mb-3">
+                    <label for="jid" class="form-label"><b>ID</b></label>
+                    <input type="number" class="form-control" id="jid" readonly name="jid" [(ngModel)]="updateJewelleryRequest.jid">
+                    
+                  </div>
+                <div class="mb-3">
+                  <label for="name" class="form-label"><b> Name</b></label>
+                  <input type="text" class="form-control" id="name" name="name" [(ngModel)]="updateJewelleryRequest.name">
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label"><b>Type</b></label>
+                    <input type="text" class="form-control" id="type" name="type" [(ngModel)]="updateJewelleryRequest.type">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="updateJewelleryRequest.description">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="price" class="form-label"><b>Price</b></label>
+                    <input type="number" class="form-control" id="price" name="price" [(ngModel)]="updateJewelleryRequest.price">
+                    
+                  </div>
+             
+                <button type="submit" class="btn btn-primary"><b>Edit</b></button>
+                <button type="button" (click)="deleteBooking(updateJewelleryRequest.jid)" class="btn btn-danger">Delete</button>
+              </form>
+    
+    
+        </div>
+    </div>
+    
+    </div>
+  </body>
+    </html>
